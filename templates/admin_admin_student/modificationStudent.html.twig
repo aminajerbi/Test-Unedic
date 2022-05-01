@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification Etudiants{% endblock %}
+
+{% block monTitre %}Modification d'etudiant {{student.firstName}}{% endblock %}
+
+
+{% block body %}
+{{form_start(form)}}
+{{form_widget(form)}}
+<input type="submit" value="Enregistrer">
+
+{{form_end(form)}}
+
+{% endblock %}

@@ -2,10 +2,12 @@
 
 {% block title %}la liste des Etudiants{% endblock %}
 
-{% block monTitre %}Liste de tous les Etudiants{% endblock %}
+{% block monTitre %}Page d'administration{% endblock %}
 
 
 {% block body %}
+<a class="btn btn-success m-5" href="">Ajouter</a>
+
 
 <div class="row">
 {% for student in students %}
@@ -16,13 +18,15 @@
             <h6 class="card-title text-center pb-2 mx-3 border-bottom border-primary">Prenom: <strong style="color:red;">{{student.firstName}}</strong></h6>
             <h6 class="card-title text-center pb-2 mx-3 border-bottom border-primary"> Nom: <strong style="color:red;">{{student.lastName}}</strong></h6>
             <h6 class="card-title text-center pb-2 mx-3 border-bottom border-primary"> Numero:<strong style="color:red;"> {{student.numEtud}}</strong></h6>
-             <a href="#" class="card-link">Card link</a>
-             <a href="#" class="card-link">Another link</a>
+             <a href="{{path('admin_student_modication', {'id' : student.id})}}" class="btn btn-secondary">Modifier</a>
+             <a href="#" class="btn btn-danger">Supprimer</a>
             </div>
         </div>
 </div>
 {% endfor %}
 
 </div>
+
+
 
 {% endblock %}
